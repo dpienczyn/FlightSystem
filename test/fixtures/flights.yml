@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departure_date: 2021-07-20
+  time: 9.99
+  departure: MyString
+  arrival: MyString
+  flight_length: 9.99
+  number_of_seats: 1
+
+two:
+  departure_date: 2021-07-20
+  time: 9.99
+  departure: MyString
+  arrival: MyString
+  flight_length: 9.99
+  number_of_seats: 1

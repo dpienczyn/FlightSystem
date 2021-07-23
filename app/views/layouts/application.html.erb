@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FlightSystem</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'index' %>
+  </head>
+
+  <body>
+    <% unless user_signed_in? %>
+      <%= link_to "Log in", new_user_session_path %><br />
+      <%= link_to "Sign up", new_user_registration_path %><br />
+    <% else %>
+      <%= link_to "Log out", destroy_user_session_path, method: 'delete' %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>

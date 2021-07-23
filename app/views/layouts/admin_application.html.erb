@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Panel Administracyjny - MobileShop</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>Panel administracyjny</h1>
+
+    <% unless admin_signed_in? %>
+      <%= link_to "Log in", new_admin_session_path %><br />
+      <%= link_to "Sign up", new_admin_registration_path %><br />
+    <% else %>
+      <%= link_to "Log out", destroy_admin_session_path, method: 'delete' %>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
